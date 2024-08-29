@@ -1,4 +1,5 @@
 extern crate dotenv;
+mod database;
 use dotenv::dotenv;
 use teloxide::{prelude::*, utils::command::BotCommands};
 
@@ -7,6 +8,9 @@ async fn main() {
     dotenv().ok(); // Using dot env to load environment value from file.
     pretty_env_logger::init();
     log::info!("Starting eorzea weather watching bot...");
+
+    //Ensure all of the required table is in the database.
+    let _ = database::init_database();
 
     let bot = Bot::from_env();
     Command::repl(bot, answer).await;
