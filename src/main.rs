@@ -1,7 +1,10 @@
 extern crate dotenv;
-mod database;
 use dotenv::dotenv;
 use teloxide::{prelude::*, utils::command::BotCommands};
+
+mod database;
+mod weather;
+mod data;
 
 #[tokio::main]
 async fn main() {
