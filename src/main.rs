@@ -32,6 +32,8 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
     match cmd {
         Command::Help => bot.send_message(msg.chat.id, Command::descriptions().to_string()).await?,
         Command::Register => {
+            let chat_id = msg.chat.id.0;
+            let _ = database::create_user(chat_id);
             bot.send_message(msg.chat.id, format!("Thank you! You are already being the user of this bot.")).await?
         },
         Command::CurrentWeather { area } => {
