@@ -1,0 +1,104 @@
+{
+    "en": {
+        "realmReborn": {
+            "name": "A Realm Reborn",
+            "area": {
+                "limsaLominsa": "Limsa Lominsa",
+                "middleLaNoscea": "Middle La Noscea",
+                "lowerLaNoscea": "Lower La Noscea",
+                "easternLaNoscea": "Eastern La Noscea",
+                "westernLaNoscea": "Western La Noscea",
+                "upperLaNoscea": "Upper La Noscea",
+                "outerLaNoscea": "Outer La Noscea",
+                "wolvesDenPier": "Wolves' Den Pier",
+                "mist": "Mist",
+                "gridania": "Gridania",
+                "centralShroud": "Central Shroud",
+                "eastShroud": "East Shroud",
+                "southShroud": "South Shroud",
+                "northShroud": "North Shroud",
+                "theLavenderBeds": "The Lavender Beds",
+                "uldah": "Ul'dah",
+                "westernThanalan": "Western Thanalan",
+                "centralThanalan": "Central Thanalan",
+                "easternThanalan": "Eastern Thanalan",
+                "southernThanalan": "Southern Thanalan",
+                "northernThanalan": "Northern Thanalan",
+                "theGoblet": "The Goblet",
+                "morDhona": "Mor Dhona"
+            }
+        },
+        "heavensward": {
+            "name": "Heavensward",
+            "area": {
+                "ishgard": "Ishgard",
+                "coerthasCentralHighlands": "Coerthas Central Highlands",
+                "coerthasWesternHighlands": "Coerthas Western Highlands",
+                "theSeaOfclouds": "The Sea of Clouds",
+                "azysLla": "Azys Lla",
+                "theDravanianForelands": "The Dravanian Forelands",
+                "theDravanianHinterlands": "The Dravanian Hinterlands",
+                "theChurningMists": "The Churning Mists",
+                "idyllshire": "Idyllshire"
+            }
+        },
+        "stormblood": {
+            "name": "Stormblood",
+            "area": {
+                "rhalgrsReach": "Rhalgr's Reach",
+                "theFringes": "The Fringes",
+                "thePeaks": "The Peaks",
+                "theLochs": "The Lochs",
+                "kugane": "Kugane",
+                "shirogane": "Shirogane",
+                "theRubySea": "The Ruby Sea",
+                "yanxia": "Yanxia",
+                "theAzimSteppe": "The Azim Steppe",
+                "eurekaAnemos": "Eureka Anemos",
+                "eurekaPagos": "Eureka Pagos",
+                "eurekaPyros": "Eureka Pyros",
+                "eurekaHydatos": "Eureka Hydatos"
+            }
+        },
+        "shadowbringers": {
+            "name": "Shadowbringers",
+            "area": {
+                "theCrystarium": "The Crystarium",
+                "eulmore": "Eulmore",
+                "lakeland": "Lakeland",
+                "kholusia": "Kholusia",
+                "amhAraeng": "Amh Araeng",
+                "ilMheg": "Il Mheg",
+                "theRaktikaGreatwood": "The Rak'tika Greatwood",
+                "theTempest": "The Tempest"
+            }
+        },
+        "endwalker": {
+            "name": "Endwalker",
+            "area": {
+                "radzAtHan": "Radz-at-Han",
+                "thavnair": "Thavnair",
+                "garlemald": "Garlemald",
+                "oldSharlayan": "Old Sharlayan",
+                "labyrinthos": "Labyrinthos",
+                "mareLamentorum": "Mare Lamentorum",
+                "ultimaThule": "Ultima Thule",
+                "elpis": "Elpis",
+                "unnamedIsland": "Unnamed Island"
+            }
+        },
+        "dawntrail": {
+            "name": "Dawntrail",
+            "area": {
+                "tuliyollal": "Tuliyollal",
+                "urqopacha": "Urqopacha",
+                "kozamauka": "Kozama'uka",
+                "yakTel": "Yak T'el",
+                "solutionNine": "Solution Nine",
+                "shaaloani": "Shaaloani",
+                "heritageFound": "Heritage Found",
+                "livingMemory": "Living Memory"
+            }
+        }
+    }
+}

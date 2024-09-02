@@ -27,7 +27,7 @@ enum Command {
     Help,
     #[command(description = "Register chat ID to the database, create a new user for this bot.")]
     Register,
-    #[command(description = "handle a username and an age.", parse_with = "split")]
+    #[command(description = "Return target area weather.", parse_with = "split")]
     CurrentWeather { area: String },
 }
 
@@ -40,6 +40,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             bot.send_message(msg.chat.id, format!("Thank you! You are already being the user of this bot.")).await?
         },
         Command::CurrentWeather { area } => {
+            let _ = data::get_weather_data();
             bot.send_message(msg.chat.id, format!("Target area: @{area} ")).await?
         }
     };
