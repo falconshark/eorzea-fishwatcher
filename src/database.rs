@@ -10,6 +10,7 @@ pub fn init_database() -> Result<()> {
     conn.execute(
         "CREATE TABLE if not exists user (
             id    INTEGER PRIMARY KEY autoincrement,
+            default_langauge TEXT DEFAULT 'jp' NOT NULL,
             chat_id  TEXT NOT NULL,
             recorded_weather  JSON
         )",
