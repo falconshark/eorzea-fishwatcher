@@ -1,8 +1,10 @@
-use rusqlite::{Connection, Result};
+use rusqlite::{ffi::Error, Connection, Result};
+
 #[derive(Debug)]
-struct User {
-    chat_id: i64,
-    recorded_weather: String,
+pub struct User {
+    pub chat_id: i64,
+    pub langauge: String,
+    pub recorded_weather: String,
 }
 
 pub fn init_database() -> Result<()> {
@@ -10,7 +12,7 @@ pub fn init_database() -> Result<()> {
     conn.execute(
         "CREATE TABLE if not exists user (
             id    INTEGER PRIMARY KEY autoincrement,
-            default_langauge TEXT DEFAULT 'jp' NOT NULL,
+            langauge TEXT DEFAULT 'jp' NOT NULL,
             chat_id  TEXT NOT NULL,
             recorded_weather  JSON
         )",
@@ -21,15 +23,26 @@ pub fn init_database() -> Result<()> {
 
 pub fn create_user(chat_id: i64) -> Result<()> {
     let conn = Connection::open("fishwatcher.db")?;
-    let user = User {
-        chat_id: chat_id,
-        recorded_weather: "".to_owned(),
-    };
     conn.execute(
         "INSERT INTO user (chat_id, recorded_weather) VALUES (?1, ?2)",
-        (user.chat_id, user.recorded_weather),
+        (chat_id, "".to_owned()),
     )?;
     Ok(())
 }
-  
-  
+
+pub fn get_user(chat_id: i64) -> Result<User, rusqlite::Error>{
+    let conn = Connection::open("fishwatcher.db")?;
+    let mut stmt = conn.prepare(
+        "SELECT langauge, recorded_weather FROM user WHERE chat_id=:chat_id"
+    )?;
+    let user_iter = stmt.query_map(&[(":chat_id", chat_id.to_string().as_str())], |row| {
+        Ok(User {
+            chat_id: chat_id,
+            langauge: row.get(0).expect("User is not existed."),
+            recorded_weather: row.get(1).expect("User is not existed."),
+        })
+    })?;
+    let user_wrap = user_iter.last();
+    let user = user_wrap.expect("User is not existed.")?;
+    Ok(user)
+}

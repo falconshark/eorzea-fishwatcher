@@ -10,9 +10,9 @@ mod area;
 async fn main() {
     dotenv().ok(); // Using dot env to load environment value from file.
     pretty_env_logger::init();
-    log::info!("Starting eorzea weather watching bot...");
+    log::info!("Starting Eorzea weather watching bot...");
 
-    //Ensure all of the required table is in the database.
+    //Ensure all the required table is in the database.
     let _ = database::init_database();
 
     let bot = Bot::from_env();
@@ -41,7 +41,22 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         Command::Version => {
             let version_list_result = area::get_version_list();
             let version_list = version_list_result.unwrap();
-            bot.send_message(msg.chat.id, format!("Thank you! You are already being the user of this bot.")).await?
+
+            let chat_id = msg.chat.id.0;
+            let user = database::get_user(chat_id);
+            let mut target_version_list_output:String = "".to_string();
+
+            match user {
+                Ok(user) => {
+                    let user_langauge = user.langauge;
+                    let target_version_list = version_list.get(user_langauge);
+                    target_version_list_output = format!("Current version list: \n");
+                },
+                Err(err) => {
+                    //If user is not existed, return default lanauge (jp)
+                }
+            }
+            bot.send_message(msg.chat.id, target_version_list_output).await?
         },
         Command::Area { version }=> {
             bot.send_message(msg.chat.id, format!("Thank you! You are already being the user of this bot.")).await?
