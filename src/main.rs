@@ -44,13 +44,17 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
 
             let chat_id = msg.chat.id.0;
             let user = database::get_user(chat_id);
-            let mut target_version_list_output:String = "".to_string();
+            let mut target_version_list_output: String = "Current version list: \n ".to_string();
 
             match user {
                 Ok(user) => {
                     let user_langauge = user.langauge;
-                    let target_version_list = version_list.get(user_langauge);
-                    target_version_list_output = format!("Current version list: \n");
+                    let target_version_list = version_list.get(user_langauge).unwrap();
+                    let target_version_list_array = target_version_list.as_array().unwrap();
+                    for version in target_version_list_array{
+                        println!("{}", version);
+                        target_version_list_output = format!("{}{} \n ", target_version_list_output, version);
+                    } 
                 },
                 Err(err) => {
                     //If user is not existed, return default lanauge (jp)
