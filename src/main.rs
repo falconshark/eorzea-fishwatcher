@@ -44,7 +44,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
 
             let chat_id = msg.chat.id.0;
             let user = database::get_user(chat_id);
-            let mut target_version_list_output: String = "Current version list: \n ".to_string();
+            let mut target_version_list_output: String = "List of currently available versions: \n".to_string();
 
             match user {
                 Ok(user) => {
@@ -52,8 +52,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
                     let target_version_list = version_list.get(user_langauge).unwrap();
                     let target_version_list_array = target_version_list.as_array().unwrap();
                     for version in target_version_list_array{
-                        println!("{}", version);
-                        target_version_list_output = format!("{}{} \n ", target_version_list_output, version);
+                        target_version_list_output = format!("{}{}\n", target_version_list_output, version.as_str().expect("Value is a str"));
                     } 
                 },
                 Err(err) => {
