@@ -25,6 +25,7 @@ async fn main() {
 enum Command {
     #[command(description = "Display this text.")]
     Help,
+
     #[command(description = "Display version list of FFXIV.")]
     Version,
     #[command(description = "Display area list of specific version.", parse_with = "split")]
@@ -39,26 +40,19 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
     match cmd {
         Command::Help => bot.send_message(msg.chat.id, Command::descriptions().to_string()).await?,
         Command::Version => {
+            //Get version list from the Json file.
             let version_list_result = area::get_version_list();
             let version_list = version_list_result.unwrap();
 
-            let chat_id = msg.chat.id.0;
-            let user = database::get_user(chat_id);
             let mut target_version_list_output: String = "List of currently available versions: \n".to_string();
 
-            match user {
-                Ok(user) => {
-                    let user_langauge = user.langauge;
-                    let target_version_list = version_list.get(user_langauge).unwrap();
-                    let target_version_list_array = target_version_list.as_array().unwrap();
-                    for version in target_version_list_array{
-                        target_version_list_output = format!("{}{}\n", target_version_list_output, version.as_str().expect("Value is a str"));
-                    } 
-                },
-                Err(err) => {
-                    //If user is not existed, return default lanauge (jp)
-                }
-            }
+            //Read the array from the Json "Object"
+            let target_version_list = version_list.get("area").unwrap();
+            let target_version_list_array = target_version_list.as_array().unwrap();
+
+            for version in target_version_list_array{
+                target_version_list_output = format!("{}{}\n", target_version_list_output, version.as_str().expect("Value is a str"));
+            } 
             bot.send_message(msg.chat.id, target_version_list_output).await?
         },
         Command::Area { version }=> {

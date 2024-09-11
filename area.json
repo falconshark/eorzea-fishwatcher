@@ -1,206 +1,96 @@
 {
-    "en": {
-        "realmReborn": {
-            "name": "A Realm Reborn",
-            "area": {
-                "limsaLominsa": "Limsa Lominsa",
-                "middleLaNoscea": "Middle La Noscea",
-                "lowerLaNoscea": "Lower La Noscea",
-                "easternLaNoscea": "Eastern La Noscea",
-                "westernLaNoscea": "Western La Noscea",
-                "upperLaNoscea": "Upper La Noscea",
-                "outerLaNoscea": "Outer La Noscea",
-                "wolvesDenPier": "Wolves' Den Pier",
-                "mist": "Mist",
-                "gridania": "Gridania",
-                "centralShroud": "Central Shroud",
-                "eastShroud": "East Shroud",
-                "southShroud": "South Shroud",
-                "northShroud": "North Shroud",
-                "theLavenderBeds": "The Lavender Beds",
-                "uldah": "Ul'dah",
-                "westernThanalan": "Western Thanalan",
-                "centralThanalan": "Central Thanalan",
-                "easternThanalan": "Eastern Thanalan",
-                "southernThanalan": "Southern Thanalan",
-                "northernThanalan": "Northern Thanalan",
-                "theGoblet": "The Goblet",
-                "morDhona": "Mor Dhona"
-            }
-        },
-        "heavensward": {
-            "name": "Heavensward",
-            "area": {
-                "ishgard": "Ishgard",
-                "coerthasCentralHighlands": "Coerthas Central Highlands",
-                "coerthasWesternHighlands": "Coerthas Western Highlands",
-                "theSeaOfclouds": "The Sea of Clouds",
-                "azysLla": "Azys Lla",
-                "theDravanianForelands": "The Dravanian Forelands",
-                "theDravanianHinterlands": "The Dravanian Hinterlands",
-                "theChurningMists": "The Churning Mists",
-                "idyllshire": "Idyllshire"
-            }
-        },
-        "stormblood": {
-            "name": "Stormblood",
-            "area": {
-                "rhalgrsReach": "Rhalgr's Reach",
-                "theFringes": "The Fringes",
-                "thePeaks": "The Peaks",
-                "theLochs": "The Lochs",
-                "kugane": "Kugane",
-                "shirogane": "Shirogane",
-                "theRubySea": "The Ruby Sea",
-                "yanxia": "Yanxia",
-                "theAzimSteppe": "The Azim Steppe",
-                "eurekaAnemos": "Eureka Anemos",
-                "eurekaPagos": "Eureka Pagos",
-                "eurekaPyros": "Eureka Pyros",
-                "eurekaHydatos": "Eureka Hydatos"
-            }
-        },
-        "shadowbringers": {
-            "name": "Shadowbringers",
-            "area": {
-                "theCrystarium": "The Crystarium",
-                "eulmore": "Eulmore",
-                "lakeland": "Lakeland",
-                "kholusia": "Kholusia",
-                "amhAraeng": "Amh Araeng",
-                "ilMheg": "Il Mheg",
-                "theRaktikaGreatwood": "The Rak'tika Greatwood",
-                "theTempest": "The Tempest"
-            }
-        },
-        "endwalker": {
-            "name": "Endwalker",
-            "area": {
-                "radzAtHan": "Radz-at-Han",
-                "thavnair": "Thavnair",
-                "garlemald": "Garlemald",
-                "oldSharlayan": "Old Sharlayan",
-                "labyrinthos": "Labyrinthos",
-                "mareLamentorum": "Mare Lamentorum",
-                "ultimaThule": "Ultima Thule",
-                "elpis": "Elpis",
-                "unnamedIsland": "Unnamed Island"
-            }
-        },
-        "dawntrail": {
-            "name": "Dawntrail",
-            "area": {
-                "tuliyollal": "Tuliyollal",
-                "urqopacha": "Urqopacha",
-                "kozamauka": "Kozama'uka",
-                "yakTel": "Yak T'el",
-                "solutionNine": "Solution Nine",
-                "shaaloani": "Shaaloani",
-                "heritageFound": "Heritage Found",
-                "livingMemory": "Living Memory"
-            }
+    "新生エオルゼア": {
+        "area": {
+            "limsaLominsa": "リムサ・ロミンサ",
+            "middleLaNoscea": "中央ラノシア",
+            "lowerLaNoscea": "低地ラノシア",
+            "easternLaNoscea": "東ラノシア",
+            "westernLaNoscea": "西ラノシア",
+            "upperLaNoscea": "高地ラノシア",
+            "outerLaNoscea": "外地ラノシア",
+            "wolvesDenPier": "ウルヴズジェイル",
+            "mist": "ミスト・ヴィレッジ",
+            "gridania": "グリダニア",
+            "centralShroud": "黒衣森：中央森林",
+            "eastShroud": "黒衣森：東部森林",
+            "southShroud": "黒衣森：南部森林",
+            "northShroud": "黒衣森：北部森林",
+            "theLavenderBeds": "ラベンダーベッド",
+            "uldah": "ウルダハ",
+            "westernThanalan": "西ザナラーン",
+            "centralThanalan": "中央ザナラーン",
+            "easternThanalan": "東ザナラーン",
+            "southernThanalan": "南ザナラーン",
+            "northernThanalan": "北ザナラーン",
+            "theGoblet": "ゴブレットビュート",
+            "morDhona": "モードゥナ"
         }
     },
-    "jp": {
-        "realmReborn": {
-            "name": "新生エオルゼア",
-            "area": {
-                "limsaLominsa": "リムサ・ロミンサ",
-                "middleLaNoscea": "中央ラノシア",
-                "lowerLaNoscea": "低地ラノシア",
-                "easternLaNoscea": "東ラノシア",
-                "westernLaNoscea": "西ラノシア",
-                "upperLaNoscea": "高地ラノシア",
-                "outerLaNoscea": "外地ラノシア",
-                "wolvesDenPier": "ウルヴズジェイル",
-                "mist": "ミスト・ヴィレッジ",
-                "gridania": "グリダニア",
-                "centralShroud": "黒衣森：中央森林",
-                "eastShroud": "黒衣森：東部森林",
-                "southShroud": "黒衣森：南部森林",
-                "northShroud": "黒衣森：北部森林",
-                "theLavenderBeds": "ラベンダーベッド",
-                "uldah": "ウルダハ",
-                "westernThanalan": "西ザナラーン",
-                "centralThanalan": "中央ザナラーン",
-                "easternThanalan": "東ザナラーン",
-                "southernThanalan": "南ザナラーン",
-                "northernThanalan": "北ザナラーン",
-                "theGoblet": "ゴブレットビュート",
-                "morDhona": "モードゥナ"
-            }
-        },
-        "heavensward": {
-            "name": "蒼天のイシュガルド",
-            "area": {
-                "ishgard": "イシュガルド",
-                "coerthasCentralHighlands": "クルザス中央高地",
-                "coerthasWesternHighlands": "クルザス西部高地",
-                "theSeaOfclouds": "アバラシア雲海",
-                "azysLla": "アジス・ラー",
-                "theDravanianForelands": "高地ドラヴァニア",
-                "theDravanianHinterlands": "低地ドラヴァニア",
-                "theChurningMists": "ドラヴァニア雲海",
-                "idyllshire": "イディルシャイア"
-            }
-        },
-        "stormblood": {
-            "name": "紅蓮のリベレーター",
-            "area": {
-                "rhalgrsReach": "ラールガーズリーチ",
-                "theFringes": "ギラバニア辺境地帯",
-                "thePeaks": "ギラバニア山岳地帯",
-                "theLochs": "ギラバニア湖畔地帯",
-                "kugane": "クガネ",
-                "shirogane": "シロガネ",
-                "theRubySea": "紅玉海",
-                "yanxia": "ヤンサ",
-                "theAzimSteppe": "アジムステップ",
-                "eurekaAnemos": "エウレカ：アネモス",
-                "eurekaPagos": "エウレカ：パゴス",
-                "eurekaPyros": "エウレカ：ピューロス",
-                "eurekaHydatos": "エウレカ：ヒュダトス"
-            }
-        },
-        "shadowbringers": {
-            "name": "漆黒のヴィランズ",
-            "area": {
-                "theCrystarium": "クリスタリウム",
-                "eulmore": "ユールモア",
-                "lakeland": "レイクランド",
-                "kholusia": "コルシア島",
-                "amhAraeng": "アム・アレーン",
-                "ilMheg": "イル・メグ",
-                "theRaktikaGreatwood": "ラケティカ大森林",
-                "theTempest": "テンペスト"
-            }
-        },
-        "endwalker": {
-            "name": "暁月のフィナーレ",
-            "area": {
-                "radzAtHan": "ラザハン",
-                "thavnair": "サベネア島",
-                "garlemald": "ガレマルド",
-                "oldSharlayan": "オールド・シャーレアン",
-                "labyrinthos": "ラヴィリンソス",
-                "mareLamentorum": "嘆きの海",
-                "ultimaThule": "ウルティマ・トゥーレ",
-                "elpis": "エルピス",
-                "unnamedIsland": "名もなき島"
-            }
-        },
-        "dawntrail": {
-            "name": "黄金のレガシー",
-            "area": {
-                "tuliyollal": "トライヨラ",
-                "urqopacha": "オルコ・パチャ",
-                "kozamauka": "コザマル・カ",
-                "yakTel": "ヤクテル樹海",
-                "solutionNine": "ソリューション・ナイン",
-                "shaaloani": "シャーローニ荒野",
-                "heritageFound": "ヘリテージファウンド",
-                "livingMemory": "リビング・メモリー"
-            }
+    "蒼天のイシュガルド": {
+        "area": {
+            "ishgard": "イシュガルド",
+            "coerthasCentralHighlands": "クルザス中央高地",
+            "coerthasWesternHighlands": "クルザス西部高地",
+            "theSeaOfclouds": "アバラシア雲海",
+            "azysLla": "アジス・ラー",
+            "theDravanianForelands": "高地ドラヴァニア",
+            "theDravanianHinterlands": "低地ドラヴァニア",
+            "theChurningMists": "ドラヴァニア雲海",
+            "idyllshire": "イディルシャイア"
+        }
+    },
+    "紅蓮のリベレーター": {
+        "area": {
+            "rhalgrsReach": "ラールガーズリーチ",
+            "theFringes": "ギラバニア辺境地帯",
+            "thePeaks": "ギラバニア山岳地帯",
+            "theLochs": "ギラバニア湖畔地帯",
+            "kugane": "クガネ",
+            "shirogane": "シロガネ",
+            "theRubySea": "紅玉海",
+            "yanxia": "ヤンサ",
+            "theAzimSteppe": "アジムステップ",
+            "eurekaAnemos": "エウレカ：アネモス",
+            "eurekaPagos": "エウレカ：パゴス",
+            "eurekaPyros": "エウレカ：ピューロス",
+            "eurekaHydatos": "エウレカ：ヒュダトス"
+        }
+    },
+    "漆黒のヴィランズ": {
+        "area": {
+            "theCrystarium": "クリスタリウム",
+            "eulmore": "ユールモア",
+            "lakeland": "レイクランド",
+            "kholusia": "コルシア島",
+            "amhAraeng": "アム・アレーン",
+            "ilMheg": "イル・メグ",
+            "theRaktikaGreatwood": "ラケティカ大森林",
+            "theTempest": "テンペスト"
+        }
+    },
+    "暁月のフィナーレ": {
+        "area": {
+            "radzAtHan": "ラザハン",
+            "thavnair": "サベネア島",
+            "garlemald": "ガレマルド",
+            "oldSharlayan": "オールド・シャーレアン",
+            "labyrinthos": "ラヴィリンソス",
+            "mareLamentorum": "嘆きの海",
+            "ultimaThule": "ウルティマ・トゥーレ",
+            "elpis": "エルピス",
+            "unnamedIsland": "名もなき島"
+        }
+    },
+    "黄金のレガシー": {
+        "area": {
+            "tuliyollal": "トライヨラ",
+            "urqopacha": "オルコ・パチャ",
+            "kozamauka": "コザマル・カ",
+            "yakTel": "ヤクテル樹海",
+            "solutionNine": "ソリューション・ナイン",
+            "shaaloani": "シャーローニ荒野",
+            "heritageFound": "ヘリテージファウンド",
+            "livingMemory": "リビング・メモリー"
         }
     }
 }

@@ -1,13 +1,5 @@
 {
-    "en": [
-        "A Realm Reborn",
-        "Heavensward",
-        "Stormblood",
-        "Shadowbringers",
-        "Endwalker",
-        "Dawntrail"
-    ],
-    "jp": [
+    "area": [
         "新生エオルゼア",
         "蒼天のイシュガルド",
         "紅蓮のリベレーター",

@@ -1,18 +1,16 @@
-use rusqlite::{ffi::Error, Connection, Result};
+use rusqlite::{Connection, Result};
 
 #[derive(Debug)]
 pub struct User {
     pub chat_id: i64,
-    pub langauge: String,
-    pub recorded_weather: String,
+    pub recorded_weather: String
 }
 
 pub fn init_database() -> Result<()> {
     let conn = Connection::open("fishwatcher.db")?;
     conn.execute(
         "CREATE TABLE if not exists user (
-            id    INTEGER PRIMARY KEY autoincrement,
-            langauge TEXT DEFAULT 'jp' NOT NULL,
+            id  INTEGER PRIMARY KEY autoincrement,
             chat_id  TEXT NOT NULL,
             recorded_weather  JSON
         )",
@@ -38,7 +36,6 @@ pub fn get_user(chat_id: i64) -> Result<User, rusqlite::Error>{
     let user_iter = stmt.query_map(&[(":chat_id", chat_id.to_string().as_str())], |row| {
         Ok(User {
             chat_id: chat_id,
-            langauge: row.get(0).expect("User is not existed."),
             recorded_weather: row.get(1).expect("User is not existed."),
         })
     })?;
