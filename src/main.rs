@@ -30,7 +30,8 @@ enum Command {
     Version,
     #[command(description = "Display area list of specific version.", parse_with = "split")]
     Area { version: String },
-    #[command(description = "Register chat ID to the database, create a new user for this bot.")]
+    #[command(description = "Register chat ID to the database, create a new user for this bot. 
+    Before using the notify function, please run it first.")]
     Register,
     #[command(description = "Return specific area weather.", parse_with = "split")]
     CurrentWeather { area: String },
@@ -56,7 +57,20 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             bot.send_message(msg.chat.id, target_version_list_output).await?
         },
         Command::Area { version }=> {
-            bot.send_message(msg.chat.id, format!("Thank you! You are already being the user of this bot.")).await?
+            let area_list_result = area::get_area_list();
+            let area_list = area_list_result.unwrap();
+            let mut target_area_list_output: String = "Area of this version: \n".to_string();
+            
+            //Read the array from the Json "Object"
+            let mut target_area_list = area_list.get(version).unwrap();
+            target_area_list = target_area_list.get("area").unwrap();
+            let target_area_list_array = target_area_list.as_object().unwrap();
+
+            for (key, value) in target_area_list_array{
+                target_area_list_output = format!("{}{}\n", target_area_list_output, value.as_str().expect("Value is a str"));
+            }
+
+            bot.send_message(msg.chat.id, target_area_list_output).await?
         },
         Command::Register => {
             let chat_id = msg.chat.id.0;

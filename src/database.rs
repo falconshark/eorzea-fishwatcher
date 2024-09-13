@@ -31,7 +31,7 @@ pub fn create_user(chat_id: i64) -> Result<()> {
 pub fn get_user(chat_id: i64) -> Result<User, rusqlite::Error>{
     let conn = Connection::open("fishwatcher.db")?;
     let mut stmt = conn.prepare(
-        "SELECT langauge, recorded_weather FROM user WHERE chat_id=:chat_id"
+        "SELECT recorded_weather FROM user WHERE chat_id=:chat_id"
     )?;
     let user_iter = stmt.query_map(&[(":chat_id", chat_id.to_string().as_str())], |row| {
         Ok(User {
