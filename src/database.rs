@@ -12,7 +12,8 @@ pub fn init_database() -> Result<()> {
         "CREATE TABLE if not exists user (
             id  INTEGER PRIMARY KEY autoincrement,
             chat_id  TEXT NOT NULL,
-            recorded_weather  JSON
+            recorded_weather  JSON,
+            unique (chat_id)
         )",
         (),
     )?;
@@ -21,11 +22,18 @@ pub fn init_database() -> Result<()> {
 
 pub fn create_user(chat_id: i64) -> Result<()> {
     let conn = Connection::open("fishwatcher.db")?;
-    conn.execute(
+    let insert_result = conn.execute(
         "INSERT INTO user (chat_id, recorded_weather) VALUES (?1, ?2)",
         (chat_id, "".to_owned()),
-    )?;
-    Ok(())
+    );
+    match insert_result {
+        Ok(result) => { 
+            Ok(())
+        },
+        Err(e) => {
+            Err(e)
+        },
+    }
 }
 
 pub fn get_user(chat_id: i64) -> Result<User, rusqlite::Error>{

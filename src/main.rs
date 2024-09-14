@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+
 extern crate dotenv;
 use dotenv::dotenv;
 use teloxide::{prelude::*, utils::command::BotCommands};
@@ -25,7 +28,6 @@ async fn main() {
 enum Command {
     #[command(description = "Display this text.")]
     Help,
-
     #[command(description = "Display version list of FFXIV.")]
     Version,
     #[command(description = "Display area list of specific version.", parse_with = "split")]
@@ -74,8 +76,15 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         },
         Command::Register => {
             let chat_id = msg.chat.id.0;
-            let _ = database::create_user(chat_id);
-            bot.send_message(msg.chat.id, format!("Thank you! You are already being the user of this bot.")).await?
+            let insert_result = database::create_user(chat_id);
+            match insert_result {
+                Ok(result) => { 
+                    bot.send_message(msg.chat.id, format!("Thank you! You are already being the user of this bot.")).await?
+                },
+                Err(e) => {
+                    bot.send_message(msg.chat.id, format!("Sorry! Some errors have occurred. Maybe you are already registed?")).await?
+                },
+            }
         },
         Command::CurrentWeather { area } => {
             bot.send_message(msg.chat.id, format!("Area: {area} ")).await?
