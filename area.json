@@ -1,96 +1,84 @@
 {
     "新生エオルゼア": {
-        "area": {
-            "limsaLominsa": "リムサ・ロミンサ",
-            "middleLaNoscea": "中央ラノシア",
-            "lowerLaNoscea": "低地ラノシア",
-            "easternLaNoscea": "東ラノシア",
-            "westernLaNoscea": "西ラノシア",
-            "upperLaNoscea": "高地ラノシア",
-            "outerLaNoscea": "外地ラノシア",
-            "wolvesDenPier": "ウルヴズジェイル",
-            "mist": "ミスト・ヴィレッジ",
-            "gridania": "グリダニア",
-            "centralShroud": "黒衣森：中央森林",
-            "eastShroud": "黒衣森：東部森林",
-            "southShroud": "黒衣森：南部森林",
-            "northShroud": "黒衣森：北部森林",
-            "theLavenderBeds": "ラベンダーベッド",
-            "uldah": "ウルダハ",
-            "westernThanalan": "西ザナラーン",
-            "centralThanalan": "中央ザナラーン",
-            "easternThanalan": "東ザナラーン",
-            "southernThanalan": "南ザナラーン",
-            "northernThanalan": "北ザナラーン",
-            "theGoblet": "ゴブレットビュート",
-            "morDhona": "モードゥナ"
-        }
+        "リムサ・ロミンサ": "limsaLominsa",
+        "中央ラノシア": "middleLaNoscea",
+        "低地ラノシア": "lowerLaNoscea",
+        "東ラノシア": "easternLaNoscea",
+        "西ラノシア": "westernLaNoscea",
+        "高地ラノシア": "upperLaNoscea",
+        "外地ラノシア": "outerLaNoscea",
+        "ウルヴズジェイル": "wolvesDenPier",
+        "ミスト・ヴィレッジ": "mist",
+        "グリダニア": "gridania",
+        "黒衣森：中央森林": "centralShroud",
+        "黒衣森：東部森林": "eastShroud",
+        "黒衣森：南部森林": "southShroud",
+        "黒衣森：北部森林": "northShroud",
+        "ラベンダーベッド": "theLavenderBeds",
+        "ウルダハ": "uldah",
+        "西ザナラーン": "westernThanalan",
+        "中央ザナラーン": "centralThanalan",
+        "東ザナラーン": "easternThanalan",
+        "南ザナラーン": "southernThanalan",
+        "北ザナラーン": "northernThanalan",
+        "ゴブレットビュート": "theGoblet",
+        "モードゥナ": "morDhona"
     },
     "蒼天のイシュガルド": {
-        "area": {
-            "ishgard": "イシュガルド",
-            "coerthasCentralHighlands": "クルザス中央高地",
-            "coerthasWesternHighlands": "クルザス西部高地",
-            "theSeaOfclouds": "アバラシア雲海",
-            "azysLla": "アジス・ラー",
-            "theDravanianForelands": "高地ドラヴァニア",
-            "theDravanianHinterlands": "低地ドラヴァニア",
-            "theChurningMists": "ドラヴァニア雲海",
-            "idyllshire": "イディルシャイア"
-        }
+        "イシュガルド": "ishgard",
+        "クルザス中央高地": "coerthasCentralHighlands",
+        "クルザス西部高地": "coerthasWesternHighlands",
+        "アバラシア雲海": "theSeaOfclouds",
+        "アジス・ラー": "azysLla",
+        "高地ドラヴァニア": "theDravanianForelands",
+        "低地ドラヴァニア": "theDravanianHinterlands",
+        "ドラヴァニア雲海": "theChurningMists",
+        "イディルシャイア": "idyllshire"
     },
     "紅蓮のリベレーター": {
-        "area": {
-            "rhalgrsReach": "ラールガーズリーチ",
-            "theFringes": "ギラバニア辺境地帯",
-            "thePeaks": "ギラバニア山岳地帯",
-            "theLochs": "ギラバニア湖畔地帯",
-            "kugane": "クガネ",
-            "shirogane": "シロガネ",
-            "theRubySea": "紅玉海",
-            "yanxia": "ヤンサ",
-            "theAzimSteppe": "アジムステップ",
-            "eurekaAnemos": "エウレカ：アネモス",
-            "eurekaPagos": "エウレカ：パゴス",
-            "eurekaPyros": "エウレカ：ピューロス",
-            "eurekaHydatos": "エウレカ：ヒュダトス"
-        }
+        "ラールガーズリーチ": "rhalgrsReach",
+        "ギラバニア辺境地帯": "theFringes",
+        "ギラバニア山岳地帯": "thePeaks",
+        "ギラバニア湖畔地帯": "theLochs",
+        "クガネ": "kugane",
+        "シロガネ": "shirogane",
+        "紅玉海": "theRubySea",
+        "ヤンサ": "yanxia",
+        "アジムステップ": "theAzimSteppe",
+        "エウレカ：アネモス": "eurekaAnemosス",
+        "エウレカ：パゴス": "eurekaPagos",
+        "エウレカ：ピューロス": "eurekaPyros",
+        "エウレカ：ヒュダトス": "eurekaHydatos"
     },
     "漆黒のヴィランズ": {
-        "area": {
-            "theCrystarium": "クリスタリウム",
-            "eulmore": "ユールモア",
-            "lakeland": "レイクランド",
-            "kholusia": "コルシア島",
-            "amhAraeng": "アム・アレーン",
-            "ilMheg": "イル・メグ",
-            "theRaktikaGreatwood": "ラケティカ大森林",
-            "theTempest": "テンペスト"
-        }
+        "クリスタリウム": "theCrystarium",
+        "ユールモア": "eulmore",
+        "レイクランド": "lakeland",
+        "コルシア島": "kholusia",
+        "アム・アレーン": "amhAraeng",
+        "イル・メグ": "ilMheg",
+        "ラケティカ大森林": "theRaktikaGreatwood",
+        "テンペスト": "theTempest"
     },
     "暁月のフィナーレ": {
-        "area": {
-            "radzAtHan": "ラザハン",
-            "thavnair": "サベネア島",
-            "garlemald": "ガレマルド",
-            "oldSharlayan": "オールド・シャーレアン",
-            "labyrinthos": "ラヴィリンソス",
-            "mareLamentorum": "嘆きの海",
-            "ultimaThule": "ウルティマ・トゥーレ",
-            "elpis": "エルピス",
-            "unnamedIsland": "名もなき島"
-        }
+        "ラザハン": "radzAtHan",
+        "サベネア島": "thavnair",
+        "ガレマルド": "garlemald",
+        "オールド・シャーレアン": "oldSharlayan",
+        "ラヴィリンソス": "labyrinthos",
+        "嘆きの海": "mareLamentorum",
+        "ウルティマ・トゥーレ": "ultimaThule",
+        "エルピス": "elpis",
+        "名もなき島": "unnamedIsland"
     },
     "黄金のレガシー": {
-        "area": {
-            "tuliyollal": "トライヨラ",
-            "urqopacha": "オルコ・パチャ",
-            "kozamauka": "コザマル・カ",
-            "yakTel": "ヤクテル樹海",
-            "solutionNine": "ソリューション・ナイン",
-            "shaaloani": "シャーローニ荒野",
-            "heritageFound": "ヘリテージファウンド",
-            "livingMemory": "リビング・メモリー"
-        }
+        "トライヨラ": "tuliyollal",
+        "オルコ・パチャ": "urqopacha",
+        "コザマル・カ": "kozamauka",
+        "ヤクテル樹海": "yakTel",
+        "ソリューション・ナイン": "solutionNine",
+        "シャーローニ荒野": "shaaloani",
+        "ヘリテージファウンド": "heritageFound",
+        "リビング・メモリー": "livingMemory"
     }
 }

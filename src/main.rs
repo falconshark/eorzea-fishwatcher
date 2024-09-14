@@ -36,7 +36,7 @@ enum Command {
     Before using the notify function, please run it first.")]
     Register,
     #[command(description = "Return specific area weather.", parse_with = "split")]
-    CurrentWeather { area: String },
+    CurrentWeather { area_name: String },
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -50,7 +50,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             let mut target_version_list_output: String = "List of currently available versions: \n".to_string();
 
             //Read the array from the Json "Object"
-            let target_version_list = version_list.get("area").unwrap();
+            let target_version_list = version_list.get("versions").unwrap();
             let target_version_list_array = target_version_list.as_array().unwrap();
 
             for version in target_version_list_array{
@@ -64,14 +64,12 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             let mut target_area_list_output: String = "Area of this version: \n".to_string();
             
             //Read the array from the Json "Object"
-            let mut target_area_list = area_list.get(version).unwrap();
-            target_area_list = target_area_list.get("area").unwrap();
+            let target_area_list = area_list.get(version).unwrap();
             let target_area_list_array = target_area_list.as_object().unwrap();
 
             for (key, value) in target_area_list_array{
-                target_area_list_output = format!("{}{}\n", target_area_list_output, value.as_str().expect("Value is a str"));
+                target_area_list_output = format!("{}{}\n", target_area_list_output, key);
             }
-
             bot.send_message(msg.chat.id, target_area_list_output).await?
         },
         Command::Register => {
@@ -86,8 +84,17 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
                 },
             }
         },
-        Command::CurrentWeather { area } => {
-            bot.send_message(msg.chat.id, format!("Area: {area} ")).await?
+        Command::CurrentWeather { area_name } => {
+            let area_list_result = area::get_area_list();
+            let area_list = area_list_result.unwrap();
+            let area_name_output = area_name.clone(); //Clone for ingore value borrow problem.
+            
+            //Read the array from the Json "Object"
+            let mut target_area_list = area_list.get(area_name).unwrap();
+            target_area_list = target_area_list.get("area").unwrap();
+            let target_area_list_array = target_area_list.as_object().unwrap();
+            let mut weather_result_output = format!("Area: {}", area_name_output);
+            bot.send_message(msg.chat.id, weather_result_output).await?
         }
     };
     Ok(())
