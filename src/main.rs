@@ -50,21 +50,20 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             let mut target_version_list_output: String = "List of currently available versions: \n".to_string();
 
             //Read the array from the Json "Object"
-            let target_version_list = version_list.get("versions").unwrap();
-            let target_version_list_array = target_version_list.as_array().unwrap();
+            let target_version_list = version_list.as_object().unwrap();
 
-            for version in target_version_list_array{
-                target_version_list_output = format!("{}{}\n", target_version_list_output, version.as_str().expect("Value is a str"));
-            } 
+            for (key, value) in target_version_list{
+                target_version_list_output = format!("{}{}\n", target_version_list_output, key);
+            }
             bot.send_message(msg.chat.id, target_version_list_output).await?
         },
         Command::Area { version }=> {
-            let area_list_result = area::get_area_list();
-            let area_list = area_list_result.unwrap();
+            let version_list_result = area::get_version_list();
+            let version_list = version_list_result.unwrap();
             let mut target_area_list_output: String = "Area of this version: \n".to_string();
             
             //Read the array from the Json "Object"
-            let target_area_list = area_list.get(version).unwrap();
+            let target_area_list = version_list.get(version).unwrap();
             let target_area_list_array = target_area_list.as_object().unwrap();
 
             for (key, value) in target_area_list_array{
@@ -85,7 +84,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             }
         },
         Command::CurrentWeather { area_name } => {
-            let area_list_result = area::get_area_list();
+            let area_list_result = area::get_area_id_list();
             let area_list = area_list_result.unwrap();
             let area_name_output = area_name.clone(); //Clone for ingore value borrow problem.
             

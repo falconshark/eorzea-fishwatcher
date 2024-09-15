@@ -8,7 +8,7 @@ pub fn get_version_list() -> std::io::Result<serde_json::Value>{
 	Ok(json)
 }
 
-pub fn get_area_list() -> std::io::Result<serde_json::Value>{
+pub fn get_area_id_list() -> std::io::Result<serde_json::Value>{
 	let file = File::open("area.json").unwrap();
 	let reader = BufReader::new(file);
 	let json: serde_json::Value = serde_json::from_reader(reader)?;
