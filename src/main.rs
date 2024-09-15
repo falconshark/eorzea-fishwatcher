@@ -90,9 +90,8 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             let area_name_output = area_name.clone(); //Clone for ingore value borrow problem.
             
             //Read the array from the Json "Object"
-            let mut target_area_list = area_list.get(area_name).unwrap();
-            target_area_list = target_area_list.get("area").unwrap();
-            let target_area_list_array = target_area_list.as_object().unwrap();
+            let target_area_list = area_list.as_object().unwrap();
+            
             let mut weather_result_output = format!("Area: {}", area_name_output);
             bot.send_message(msg.chat.id, weather_result_output).await?
         }
