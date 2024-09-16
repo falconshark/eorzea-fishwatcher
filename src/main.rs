@@ -64,10 +64,10 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             
             //Read the array from the Json "Object"
             let target_area_list = version_list.get(version).unwrap();
-            let target_area_list_array = target_area_list.as_object().unwrap();
+            let target_area_list_array = target_area_list.as_array().unwrap();
 
-            for (key, value) in target_area_list_array{
-                target_area_list_output = format!("{}{}\n", target_area_list_output, key);
+            for area in target_area_list_array{
+                target_area_list_output = format!("{}{}\n", target_area_list_output, area.as_str().expect("Value is a str"));
             }
             bot.send_message(msg.chat.id, target_area_list_output).await?
         },
@@ -89,7 +89,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             let area_name_output = area_name.clone(); //Clone for ingore value borrow problem.
             
             //Read the array from the Json "Object"
-            let target_area_list = area_list.as_object().unwrap();
+            let area_id = area_list.get(area_name).unwrap().to_string();
             
             let mut weather_result_output = format!("Area: {}", area_name_output);
             bot.send_message(msg.chat.id, weather_result_output).await?
