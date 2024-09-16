@@ -1,7 +1,6 @@
 use chrono::{DateTime, Local, TimeZone};
-use std::{collections::HashMap, fmt::format};
-use std::fs::File;
-use std::io::BufReader;
+use serde::Deserialize;
+use reqwest::Error;
 
 /**
  *
