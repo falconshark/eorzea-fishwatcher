@@ -89,7 +89,8 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             let area_name_output = area_name.clone(); //Clone for ingore value borrow problem.
             
             //Read the array from the Json "Object"
-            let area_id = area_list.get(area_name).unwrap().to_string();
+            let area_id = area_list.get(area_name).unwrap().as_str().expect("Value is a str").to_string();
+            let weather_info = weather::get_current_weather(area_id).await;
             
             let mut weather_result_output = format!("Area: {}", area_name_output);
             bot.send_message(msg.chat.id, weather_result_output).await?
